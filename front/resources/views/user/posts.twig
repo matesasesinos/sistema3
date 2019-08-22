@@ -1,0 +1,71 @@
+{% extends 'templates/app.twig' %}
+{% block content %}
+ <!-- Jumbotron -->
+ <div class="jumbotron jumbotron-fluid" data-center="background-size: 100%;"
+ data-top-bottom="background-size: 110%;">
+ <div class="container" >
+    <!-- jumbo-heading -->
+    <div class="jumbo-heading" data-aos="fade-up">
+       <h1>Mis Publicaciones</h1>
+       <!-- Breadcrumbs -->
+       <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a href="../">Home</a></li>
+             <li class="breadcrumb-item active" aria-current="page">Mis Publicaciones</li>
+          </ol>
+       </nav>
+       <!-- /breadcrumb -->
+    </div>
+    <!-- /jumbo-heading -->
+ </div>
+ <!-- /container -->
+</div>
+<!-- /jumbotron -->
+<div class="page">
+    <div class="container block-padding no-bg-small">
+        <!--row -->
+        <div class="row pb-3">
+           <div class="col-lg-3 col-md-3 col-12" id="perfil-menu">
+               <div class="list-group">
+                     <a href="{{ path_for('user.data', {'id': auth.user.id}) }}" class="list-group-item list-group-item-action">Mis Datos Personales</a>
+                     <a href="{{ path_for('user.password', {'id': auth.user.id}) }}" class="list-group-item list-group-item-action">Cambiar mi contraseña</a>
+                     <a href="{{ path_for('user.entrys', {'id': auth.user.id}) }}" class="active list-group-item list-group-item-action">Mis Publicaciones</a>
+                     <a href="{{ path_for('user.publish') }}" class=" list-group-item list-group-item-action">Publicar</a>
+                 </div>
+           </div>
+            <div class="col-lg-9 col-md-9 col-12" id="perfil-data">
+                <h4>Mis publicaciones</h4>
+                {% if entrys is empty%}
+                <div class="alert alert-primary" role="alert">
+                     ¡Todavía no tienes publicaciones! Haz click <a href="{{ path_for('user.publish') }}" class="badge badge-pill badge-dark">aquí</a> para iniciar una nueva.
+                  </div>
+                  {% else %}
+                <table class="table table-striped">
+           <thead>
+              <tr>
+                 <th>Titulo</th>
+                 <th>Fecha</th>
+                 <th>Publicada</th>
+                 <th>Editar</th>
+              </tr>
+           </thead>
+           <tbody>
+               {% for posts in entrys %}
+              <tr>
+                 <td><a href="{{ path_for('blog.edit', {'id': posts.id_post}) }}">{{ posts.title }}</a></td>
+                 <td>{{ posts.date|date("m-d-Y")}}</td>
+                 <td>{% if posts.status == 1 %}<i class="fas fa-check alert-success"></i>{% else %} <i class="fas fa-minus-circle alert-danger"></i> {% endif %}</td>
+                 <td><a href="{{ path_for('blog.edit', {'id': posts.id_post}) }}"><i class="fas fa-edit"></i></a></td>
+              </tr>
+              {% endfor %}
+           </tbody>
+        </table>
+        {% endif %}
+            </div>
+           <!-- /col-lg-6-->
+        </div>
+        <!-- /row -->
+     </div>
+
+</div>
+{% endblock %}

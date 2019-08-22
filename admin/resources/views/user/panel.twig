@@ -1,0 +1,59 @@
+{% extends 'templates/app.twig' %}
+{% block content %}
+         <!-- Jumbotron -->
+         <div class="jumbotron jumbotron-fluid" data-center="background-size: 100%;"
+         data-top-bottom="background-size: 110%;">
+         <div class="container" >
+            <!-- jumbo-heading -->
+            <div class="jumbo-heading" data-aos="fade-up">
+               <h1>Mi Perfil</h1>
+               <!-- Breadcrumbs -->
+               <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="breadcrumb-item"><a href="../">Home</a></li>
+                     <li class="breadcrumb-item active" aria-current="page">Mi Perfil</li>
+                  </ol>
+               </nav>
+               <!-- /breadcrumb -->
+            </div>
+            <!-- /jumbo-heading -->
+         </div>
+         <!-- /container -->
+      </div>
+      <!-- /jumbotron -->
+
+      <div class="page">
+
+        <div class="container block-padding no-bg-small">
+            <!--row -->
+            <div class="row pb-3">
+               <div class="col-lg-3 col-md-3 col-12" id="perfil-menu">
+                     <div class="list-group">
+                           <a href="{{ path_for('user.data', {'id': auth.user.id}) }}" class="list-group-item list-group-item-action">Mis Datos Personales</a>
+                           <a href="{{ path_for('user.password', {'id': auth.user.id}) }}" class="list-group-item list-group-item-action">Cambiar mi contraseña</a>
+                           <a href="{{ path_for('user.entrys', {'id': auth.user.id}) }}" class="list-group-item list-group-item-action">Mis Publicaciones</a>
+                           <a href="{{ path_for('user.publish') }}" class="list-group-item list-group-item-action">Publicar</a>
+                       </div>
+               </div>
+                <div class="col-lg-9 col-md-9 col-12" id="perfil-data">
+                     {% include 'templates/partials/flash.twig' %}
+                    <div class="text-center p-5">Hola <strong>{{ auth.user.name }}</strong>, desde esta sección podes configurar tus datos o realizar una nueva publicación.</div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 bg-primary pattern1 p-3 text-light">
+                           <h4>Datos personales</h4> 
+                           <p>Aquí podras modificar tus datos personales como teléfono o contraseña.</p>
+                           <a href="{{ path_for('user.data', {'id': auth.user.id}) }}" class="btn btn-dark">Modificar</a>
+                       </div>
+                        <div class="col-md-6 col-12 bg-tertiary pattern3 p-3 text-light">
+                            <h4>Publicaciones</h4>
+                            <p>Aquí podras agregar publicaciones, recorda que primero serán aprobadas por un administrador.</p>
+                            <a href="{{ path_for('user.entrys', {'id':auth.user.id}) }}" class="btn btn-dark">Ir a las publicaciones</a>
+                        </div>
+                    </div>
+                </div>
+               <!-- /col-lg-6-->
+            </div>
+            <!-- /row -->
+         </div>
+      </div>
+{% endblock %}

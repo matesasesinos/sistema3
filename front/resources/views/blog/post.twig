@@ -1,0 +1,89 @@
+{% extends 'templates/app.twig' %}
+{% block content %}
+<div class="jumbotron jumbotron-fluid" data-center="background-size: 100%;"
+     data-top-bottom="background-size: 110%;">
+     <div class="container" >
+        <!-- jumbo-heading -->
+        <div class="jumbo-heading" data-aos="fade-up">
+           <h1>{{ post.title | truncate(20) }}</h1>
+           <!-- Breadcrumbs -->
+           <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                 <li class="breadcrumb-item"><a href="{{ base_url() }}">Home</a></li>
+                 <li class="breadcrumb-item"><a href="{{ path_for('blog.category', {'link_rewrite':'noticias'}) }}">Noticias</a></li>
+                 <li class="breadcrumb-item active" aria-current="page">{{ post.title }}</li>
+              </ol>
+           </nav>
+           <!-- /breadcrumb -->
+        </div>
+        <!-- /jumbo-heading -->
+     </div>
+     <!-- /container -->
+  </div>
+   <!-- ==== Page Content ==== -->
+ <div class="page">
+    <div class="container">
+       <div class="row">
+          <!-- Post Content Column -->
+          <div class="col-lg-9 blog-card page-with-sidebar">
+             <h2 class="mb-2">{{ post.title }}</h2>
+             <!-- Post info-->
+             <div class="post-info text-muted text-capitalize">
+                {{ post.date|localizeddate('none', 'none', app.request.locale, "America/Argentina/Buenos_Aires", "MMMM") }} {{ post.date|date("d") }}, {{ post.date | date("Y") }}
+             </div>
+             <hr>
+             <!-- Preview Image -->
+             <img src="{{ base_url() }}/assets/img/posts/{{ post.cover }}" class="img-fluid" alt="{{ post.title }}">
+             <hr>
+             {{ post.content | striptags}}
+          </div>
+          <!-- /page-with-sidebar -->
+          <!-- Sidebar -->
+          <div id="sidebar" class="bg-light h-100 col-lg-3 card pattern3">
+              <!--widget-area -->
+              <div class="widget-area">
+                 <h5 class="sidebar-header">Búsqueda rápida</h5>
+                 <form action="{{ path_for('blog.search') }}" method="get">
+                    <div class="input-group">
+                       <input type="text" class="form-control" name="search" placeholder="Buscar...">
+                       <span class="input-group-btn">
+                       <button class="btn btn-secondary btn-sm" type="submit"><i class="fas fa-search"></i></button>
+                       </span>
+                    </div>
+                   </form>
+              </div>
+              <!--/widget-area -->
+              <div class="widget-area">
+                  <h5 class="sidebar-header">Categorías</h5>
+                  <div class="list-group">
+                     {% for category in categories %}
+                     <a href="{{ path_for('blog.category', {'link_rewrite':category.link_rewrite}) }}" class="list-group-item list-group-item-action">
+                     {{ category.name }}
+                     </a>
+                     {% endfor %}
+                  </div>
+               </div>
+              <!--/widget-area -->
+              <div class="widget-area">
+                 <h5 class="sidebar-header">Síguenos en</h5>
+                 <div class="contact-icon-info">
+                    <ul class="social-media text-center">
+                       <!--social icons -->
+                       <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                       <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                       <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                       <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                    </ul>
+                 </div>
+                 <!--/contact-icon-info -->
+              </div>
+              <!--/widget-area -->
+           </div>
+           <!--/sidebar -->      
+       </div>
+       <!-- /.row -->
+    </div>
+    <!-- /.container -->
+ </div>
+ <!-- /page -->
+{% endblock %}

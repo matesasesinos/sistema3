@@ -1,0 +1,41 @@
+<!-- ==== Newsletter - call to action ==== -->
+<div class="container-fluid footer-bg block-padding overlay" id="newsletter_form">
+        <div class="container">
+           <div class="col-lg-5 text-light text-left">
+              <h4>Boletín de novedades</h4>
+              <p>¡No te pierdas de todas las noticias para tu mascota!</p>
+              <!-- Form -->				
+              <div id="mc_embed_signup" >
+                 <!-- your form address in the line bellow -->
+                 <form action="{{ path_for('api.suscribe') }}" method="post"  autocomplete="off">
+                    <div id="mc_embed_signup_scroll">
+                       <div class="mc-field-group">
+                          <div class="input-group">
+                             <input class="form-control border2 input-lg email" type="text" value="" name="email" placeholder="Correo electrónico" >
+
+                             <span class="input-group-btn">
+                             <button class="btn btn-primary btn-sm" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">¡Inscribite!</button>
+                             </span>
+                             {% if errors.email %}
+                              <div class="invalid-feedback">{{ errors.email | first }}</div>
+                              {% endif %}
+                          </div>
+                          <!-- Subscription results -->
+                          <div id="mce-responses" class="mailchimp">
+                             <div class="alert alert-danger response" id="mce-error-response"></div>
+                             <div class="alert alert-success response" id="mce-success-response"></div>
+                          </div>
+                       </div>
+                       <!-- /mc-fiel-group -->									
+                    </div>
+                    {{ csrf.field | raw }}
+                    <!-- /mc_embed_signup_scroll -->
+                 </form>
+                 <!-- /form ends -->								
+              </div>
+              <!-- /mc_embed_signup -->
+           </div>
+           <!--/ col-lg-->
+        </div>
+        <!--/ container-->
+     </div>

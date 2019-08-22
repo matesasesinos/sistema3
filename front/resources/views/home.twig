@@ -1,0 +1,366 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+
+<!-- ==== Slider ==== -->
+        <div id="slider" style="width:1200px;margin:0 auto;margin-bottom: 0px;">
+		  <!-- Slide 1 -->
+		  <div class="ls-slide" data-ls="duration:4000; transition2d:7;">
+			 <!-- bg image  -->
+			 <img src="{{ base_url() }}/assets/img/home/perro1.jpg" class="ls-bg" alt="Mi perro y yo imagen" />
+			 <!-- text  -->
+			 <div class="ls-l header-wrapper" data-ls="offsetxin:-100;durationin:1400;delayin:300;offsetxout:-200;durationout:1000;">
+				<div class="header-text text-light">
+				   <h1>Bienvenido a <br><span>Mi perro & yo</span></h1>
+				   <!--the div below is hidden on small screens  -->
+				   <div class="hidden-small">
+					  <p class="header-p">La plataforma donde encontraras toda la información para tu amigo canino.</p>
+					  <a class="btn btn-secondary" href="#">Conocer más</a>
+				   </div>
+				   <!--/d-none  -->
+				</div>
+				<!-- header-text  -->
+			 </div>
+		  </div>
+		  <!-- ls-slide -->
+		  <!-- Slide 2 -->
+		  <div class="ls-slide" data-ls="duration:4000; transition2d:7;">
+			 <!-- bg image  -->
+			 <img src="{{ base_url() }}/assets/img/home/perro2.jpg" class="ls-bg" alt="Mi perro y yo imagen" />
+			 <!-- text  -->
+			 <div class="ls-l header-wrapper" data-ls="offsetxin:-100;durationin:1400;delayin:300;offsetxout:-200;durationout:1000;">
+				<div class="header-text text-light">
+				   <h1>Servicios <span>Veterinarios</span></h1>
+				   <!--the div below is hidden on small screens  -->
+				   <div class="hidden-small">
+					  <p class="header-p">Todo lo que tienes que saber para encontrar uno de confianza para tu perro.</p>
+					  <a class="btn btn-secondary " href="#">Ver más</a>
+				   </div>
+				   <!--/d-none  -->
+				</div>
+				<!-- header-text  -->
+			 </div>
+		  </div>
+		  <!-- ls-slide -->
+		  <!-- Slide 3 -->
+		  <div class="ls-slide" data-ls="duration:4000; transition2d:7;">
+			 <!-- bg image  -->
+			 <img src="{{ base_url() }}/assets/img/home/perro3.jpg" class="ls-bg" alt="Mi perro y yo imagen" />
+			 <!-- text  -->
+			 <div class="ls-l header-wrapper" data-ls="offsetxin:-100;durationin:1400;delayin:300;offsetxout:-200;durationout:1000;">
+				<div class="header-text text-light">
+				   <h1>Paseadores <br><span>en línea</span></h1>
+				   <!--the div below is hidden on small screens  -->
+				   <div class="hidden-small">
+					  <p class="header-p">Encuentra a el paseador indicado para tu mascota preferida.</p>
+					  <a class="btn btn-secondary " href="#">Ingresá a la plataforma</a>
+				   </div>
+				   <!--/d-none  -->
+				</div>
+				<!-- header-text  -->
+			 </div>
+		  </div>
+		  <!-- ls-slide -->
+		  <!-- Slide 4 -->
+		  <div class="ls-slide" data-ls="duration:4000; transition2d:7;">
+			 <!-- bg image  -->
+			 <img src="{{ base_url() }}/assets/img/home/perro4.jpg" class="ls-bg" alt="Mi perro y yo imagen" />
+			 <!-- text  -->
+			 <div class="ls-l header-wrapper" data-ls="offsetxin:-100;durationin:1400;delayin:300;offsetxout:-200;durationout:1000;">
+				<div class="header-text text-light">
+				   <h1>Eventos <br><span>y más</span></h1>
+				   <!--the div below is hidden on small screens  -->
+				   <div class="hidden-small">
+					  <p class="header-p">Conocé todos los eventos a los cuales asisitimos</p>
+					  <a class="btn btn-secondary " href="#">Ver más</a>
+				   </div>
+				   <!--/d-none  -->
+				</div>
+				<!-- header-text  -->
+			 </div>
+		  </div>
+		  <!-- ls-slide -->
+	   </div>
+	   <!-- /slider -->
+	       <!-- section -->
+      <section id="intro-home" class="container-fluid bg-light pattern4-right">
+         <div class="container">
+            <!-- row -->  
+            <div class="row">
+               <div class="col-lg-9">
+                  <h3>¿Necesitas ayuda con tu perro?</h3>
+                  <p>Maecenas at arcu risus. Donec commodo sodales ex, scelerisque laoreet nibh hendrerit id. In aliquet magna nec lobortis maximus. Etiam rhoncus leo a dolor placerat, nec elementum ipsum convall.</p>
+               </div>
+               <!-- /col-lg-->
+               <div class="col-lg-3 justify-content-center align-self-center">
+                  <!-- button -->
+                  <a href="#" class="btn btn-secondary"  data-aos="zoom-out">Mirá nuestros consejos</a>
+               </div>
+               <!-- /col-lg-->
+            </div>
+            <!-- /row -->
+         </div>
+         <!-- /container -->
+      </section>
+      <!-- /section ends -->
+	     <!-- section -->
+      <section id="call-widget" class="container-fluid pt-0 pb-0">
+         <div class="row p-0">
+            <!-- call 1 -->
+            <div class="call-box col-lg-4 p-0">
+               <a href="#">
+                  <!-- image -->
+                  <img src="./assets/img/home/accesorios.jpg" alt="" class="center-block img-responsive">
+                  <div class="call-title">
+                     <!-- call-info -->
+                     <div class="call-info text-center">
+                        <p class="subtitle text-light">¡seguro que se lo merece!</p>
+                        <h3 class="text-light">Accesorios</h3>
+                     </div>
+                  </div>
+               </a>
+            </div>
+            <!-- /call-box -->
+            <!-- call 2 -->
+            <div class="call-box col-lg-4 p-0">
+               <a href="#">
+                  <!-- image -->
+                  <img src="./assets/img/home/cuidado.jpg" alt="" class="center-block img-responsive">
+                  <div class="call-title">
+                     <!-- call-info -->
+                     <div class="call-info text-center">
+                        <p class="subtitle text-light">si ellos estan bien, vos también</p>
+                        <h3 class="text-light">Salud y Cuidado</h3>
+                     </div>
+                  </div>
+               </a>
+            </div>
+            <!-- /call-box -->
+            <!-- call 3 -->
+            <div class="call-box col-lg-4 p-0">
+               <a href="#">
+                  <!-- image -->
+                  <img src="./assets/img/home/petfriendly.jpg" alt="" class="center-block img-responsive">
+                  <div class="call-title">
+                     <!-- call-info -->
+                     <div class="call-info text-center">
+                        <p class="subtitle text-light">lugares para pasear con ellos</p>
+                        <h3 class="text-light">Petfriendly</h3>
+                     </div>
+                  </div>
+               </a>
+            </div>
+            <!-- /call-box -->
+         </div>
+         <!-- /row -->
+      </section>
+      <!-- /section-->
+	  <!-- section --> 
+      <section id="feature-section" class="bg-light pattern1">
+         <div class="container">
+            <!-- section heading -->  
+            <div class="section-heading text-center">
+               <p class="subtitle">Beneficios para tu mascota</p>
+               <h2>Recomendaciones</h2>
+            </div>
+            <!-- /section-heading -->
+            <!-- features -->
+            <div class="row text-lg-right">
+               <div class="col-md-6 col-lg-3">
+                  <!-- feature -->
+                  <div class="feature-with-icon">
+                     <div class="icon-features">
+                        <!-- icon -->
+                        <i class="flaticon-pet-lotion"></i>
+                     </div>
+                     <h5><strong>Baños</strong></h5>
+                     <p>Etiam rhoncus leo a dolor placerat, nec elem entum ipsum convall.</p>
+                  </div>
+                  <!-- /feature-with-icon-->
+                  <!-- feature -->
+                  <div class="feature-with-icon">
+                     <div class="icon-features">
+                        <!-- icon -->
+                        <i class="flaticon-veterinarian-hospital"></i>
+                     </div>
+                     <h5><strong>Cuidado veterinario</strong></h5>
+                     <p>Etiam rhoncus leo a dolor placerat, nec elem entum ipsum convall.</p>
+                  </div>
+                  <!-- /feature-with-icon-->
+                  <!-- feature -->
+                  <div class="feature-with-icon">
+                     <div class="icon-features">
+                        <!-- icon -->
+                        <i class="flaticon-dog-training-1"></i>
+                     </div>
+                     <h5><strong>Paseos</strong></h5>
+                     <p>Etiam rhoncus leo a dolor placerat, nec elem entum ipsum convall.</p>
+                  </div>
+                  <!-- /feature-with-icon-->
+               </div>
+               <div class="col-md-6 col-lg-3 text-left pt-3 pt-sm-0 order-lg-12">
+                  <!-- feature -->
+                  <div class="feature-with-icon">
+                     <div class="icon-features">
+                        <!-- icon -->
+                        <i class="flaticon-pet-shelter"></i>
+                     </div>
+                     <h5><strong>Alegría doméstica</strong></h5>
+                     <p>Etiam rhoncus leo a dolor placerat, nec elem entum ipsum convall.</p>
+                  </div>
+                  <!-- /feature-with-icon-->
+                  <!-- feature -->
+                  <div class="feature-with-icon">
+                     <div class="icon-features">
+                        <!-- icon -->
+                        <i class="flaticon-animal-1"></i>
+                     </div>
+                     <h5><strong>Consultas</strong></h5>
+                     <p>Etiam rhoncus leo a dolor placerat, nec elem entum ipsum convall.</p>
+                  </div>
+                  <!-- /feature-with-icon-->
+                  <!-- feature -->
+                  <div class="feature-with-icon">
+                     <div class="icon-features">
+                        <!-- icon -->
+                        <i class="flaticon-pet"></i>
+                     </div>
+                     <h5><strong>Lugares petfriendly</strong></h5>
+                     <p>Etiam rhoncus leo a dolor placerat, nec elem entum ipsum convall.</p>
+                  </div>
+                  <!-- /feature-with-icon-->
+               </div>
+               <!-- /col-l -->
+               <div class="text-center col-lg-5 mx-auto mt-3">
+				<!--image  -->
+				<img alt="" class="img-fluid rounded" src="./assets/img/posts/beneficios2.jpg" data-aos="flip-right">
+				</div>
+               <!-- col-lg-  -->
+            </div>
+            <!-- /row-->
+         </div>
+         <!-- /container -->
+      </section>
+      <!-- /section ends -->
+	     <!-- section -->
+      <section id="blogprev-home" class="overlay-dark bg-fixed">
+         <div class="container">
+            <!-- section heading -->  
+            <div class="section-heading text-center text-light">
+               <p class="subtitle">Mantente informado</p>
+               <h2>Nuestras últimas noticias</h2>
+            </div>
+            <!-- /section-heading -->
+            <!-- blog carousel -->
+            <div class="carousel-3items owl-carousel owl-theme col-md-12">
+               
+                  {% for post in home %}
+               <!-- blog-box -->
+               <div class="blog-box">
+                  <!-- image -->
+                  <a href="{{ path_for('blog.entry', {'link_rewrite':post.link_rewrite}) }}">
+                     <div class="image"><img src="{{ base_url() }}/assets/img/posts/{{ post.cover }}" alt="Mi perro y yo Olivia"/></div>
+                  </a>
+                  <!-- blog-box-caption -->
+                  <div class="blog-box-caption">
+                     <!-- date -->
+                     <div class="date"><span class="day">{{ post.date|date("d") }}</span><span class="month">{{ post.date|localizeddate('none', 'none', app.request.locale, "America/Argentina/Buenos_Aires", "MMM") }}</span></div>
+                     <a href="{{ path_for('blog.entry', {'link_rewrite':post.link_rewrite}) }}" title="{{ post.title }}" class="title-post">
+                           <h4>{{ post.title | truncate(30) }}</h4>
+                        </a>
+                     <!-- /link -->
+                     <p>
+                           {{ post.summary| truncate(120) }}
+                     </p>
+                  </div>
+                  <!-- blog-box-footer -->
+                  <div class="blog-box-footer">
+                     <div class="author">Publicado por<a href="#"><i class="fas fa-user"></i>{{ post.author_name|capitalize }}</a></div>
+                     <div class="comments"><a href="#"><i class="fas fa-comment"></i>23</a></div>
+                     <!-- Button -->	 
+                     <div class="text-center col-md-12">
+                        <a href="{{ path_for('blog.entry', {'link_rewrite':post.link_rewrite}) }}" class="btn btn-primary ">Ver más</a>
+                     </div>
+                  </div>
+                  <!-- /blog-box-footer -->
+               </div>
+               <!-- /blog-box -->
+               {% endfor %}
+            </div>
+            <!-- /owl-carousel -->
+         </div>
+         <!-- /container -->
+      </section>
+      <!-- /section ends-->
+	  <!--/accordion -->
+      <div class="container mt-5">
+         <h3 class="res-margin">Lo que dicen de nosotros</h3>
+         <!-- divider -->
+         <hr class="small-divider left"/>
+         <div class="mt-3 row">
+            <!-- testimonials -->
+            <div class="carousel-1item card bg-light owl-carousel owl-theme col-md-12">
+               <!-- testimonial -->
+               <div class="testimonial">
+                  <div class="content">
+                     <p class="description">
+                        Aliquam erat volutpat In id fermentum augue, ut pellentesque leo. Maecenas at arcu risus. Donec commodo sodales ex, scelerisque laoreet nibh hendrerit id. In aliquet magna nec lobortis maximus. Etiam rhoncus leo a dolor placerat, nec elementum ipsum convall.                        
+                     </p>
+                  </div>
+                  <!-- /content -->
+                  <div class="testimonial-pic">
+                     <img src="./assets/img/team/team1.jpg" class="img-fluid" alt="">
+                  </div>
+                  <!-- /testimonial-pic -->
+                  <div class="testimonial-review">
+                     <h5 class="testimonial-title">Lucianna Smith</h5>
+                     <span>Teacher</span>
+                  </div>
+                  <!-- /testimonial-review -->
+               </div>
+               <!-- /testimonial -->
+               <!-- testimonial -->
+               <div class="testimonial">
+                  <div class="content">
+                     <p class="description">
+                        Aliquam erat volutpat In id fermentum augue, ut pellentesque leo. Maecenas at arcu risus. Donec commodo sodales ex, scelerisque laoreet nibh hendrerit id. In aliquet magna nec lobortis maximus. Etiam rhoncus leo a dolor placerat, nec elementum ipsum convall.                        
+                     </p>
+                  </div>
+                  <!-- /content -->
+                  <div class="testimonial-pic">
+                     <img src="./assets/img/team/team2.jpg" class="img-fluid" alt="">
+                  </div>
+                  <!-- /testimonial-pic -->
+                  <div class="testimonial-review">
+                     <h5 class="testimonial-title">John Sadana</h5>
+                     <span>Doctor</span>
+                  </div>
+                  <!-- /testimonial-review -->
+               </div>
+               <!-- /testimonial -->
+               <!-- testimonial -->
+               <div class="testimonial">
+                  <div class="content">
+                     <p class="description">
+                        Aliquam erat volutpat In id fermentum augue, ut pellentesque leo. Maecenas at arcu risus. Donec commodo sodales ex, scelerisque laoreet nibh hendrerit id. In aliquet magna nec lobortis maximus. Etiam rhoncus leo a dolor placerat, nec elementum ipsum convall.                        
+                     </p>
+                  </div>
+                  <!-- /content -->
+                  <div class="testimonial-pic">
+                     <img src="./assets/img/team/team3.jpg" class="img-fluid" alt="">
+                  </div>
+                  <!-- /testimonial-pic -->
+                  <div class="testimonial-review">
+                     <h5 class="testimonial-title">Jane Janeth</h5>
+                     <span>Librarian</span>
+                  </div>
+                  <!-- /testimonial-review -->
+               </div>
+               <!-- /testimonial -->
+            </div>
+            <!-- /owl-testimonial -->            
+         </div>
+         <!-- /row -->
+      </div>
+
+{% endblock %}

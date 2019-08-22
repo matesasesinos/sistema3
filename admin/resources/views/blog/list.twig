@@ -1,0 +1,54 @@
+{% extends 'templates/app.twig' %}
+{% block content %}
+<div class="row">
+   <ol class="breadcrumb">
+      <li><a href="{{ base_url() }}">
+         <em class="fa fa-home"></em>
+      </a></li>
+      <li class="active">Entradas</li>
+   </ol>
+</div><!--/.row-->
+<div class="row">
+   <div class="col-lg-12">
+      <h1 class="page-header">Todas las entradas <span class="pull-right"><a href="{{ path_for('blog.publish') }}" class="btn btn-primary">CREAR ENTRADA <i class="fas fa-plus"></i></a></span></h1>
+   </div>
+</div><!--/.row-->
+<div class="panel panel-container">
+   <div class="row">
+      <div class="col-xs-12">
+            {% include 'templates/partials/flash.twig' %}
+            <table class="table-responsive table table-hover table-striped" id="tabla">
+                  <thead>
+                      <tr>
+                         <th>ID</th>
+                          <th>Titulo</th>
+                          <th>Fecha</th>
+                          <th>Estado</th>
+                          <th>Usuario</th>
+                          <th></th>
+                          <th></th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      {% for blog in blogs %}
+                          <tr>
+                             <td>{{ blog.id_post }}</td>
+                              <td>{{ blog.title }}</td>
+                              <td>{{ blog.date | date('d-m-Y') }}</td>
+                              <td>{{ blog.status == 1 ? '<div class="success"><i class="fas fa-check"></i></div>' : '<div class="danger"><i class="fas fa-ban danger"></i></div>'}}</td>
+                              <td>{{ blog.author_name }} {{ blog.author_lastname }}</td>
+                              <td><a href="{{ path_for('blog.edit', {'id':blog.id_post} )}}" class="btn btn-primary"><i class="fas fa-eye"></i></a></td>
+                              <td>
+                                 <form action="{{ path_for('blog.delete') }}">
+                                    <input type="hidden" name="id_post" value="{{ blog.id_post }}">
+                                    {{ csrf.field | raw }}
+                                    <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                                 </form>
+                          </tr>
+                      {% endfor %}
+                  </tbody>
+              </table>
+      </div>
+   </div>
+</div>
+{% endblock %}

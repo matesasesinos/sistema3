@@ -1,0 +1,98 @@
+{% extends 'templates/app.twig' %}
+{% block content %}
+ <!-- Jumbotron -->
+ <div class="jumbotron jumbotron-fluid" data-center="background-size: 100%;"
+ data-top-bottom="background-size: 110%;">
+ <div class="container" >
+    <!-- jumbo-heading -->
+    <div class="jumbo-heading" data-aos="fade-up">
+       <h1>Contacto</h1>
+       <!-- Breadcrumbs -->
+       <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a href="{{ base_url() }}">Home</a></li>
+             <li class="breadcrumb-item active" aria-current="page">Contacto</li>
+          </ol>
+       </nav>
+       <!-- /breadcrumb -->
+    </div>
+    <!-- /jumbo-heading -->
+ </div>
+ <!-- /container -->
+</div>
+<!-- /jumbotron -->
+      <!-- ==== Page Content ==== -->
+      <div class="page">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-5">
+                     <h2>Ponete en contacto</h2> 
+                     <span class="h7 mt-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</span>
+                     <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                     <!-- contact icons-->
+                     <ul class="list-unstyled mt-3 list-contact colored-icons">
+                        <li><i class="fa fa-envelope margin-icon"></i><a href="mailto:info@miperroyyo.com.ar">info@miperroyyo.com.ar</a></li>
+                        <li><i class="fa fa-phone margin-icon"></i>(+54) 11 4334-3131</li>
+                        <li><i class="fa fa-map-marker margin-icon"></i>Moreno 850 Bs As - CABA</li>
+                     </ul>
+                     <!-- /list-->
+                  </div>
+                  <!-- /col-lg- -->
+                  <!-- contact-info-->
+                  <div class="contact-info col-lg-6 offset-lg-1 ">
+                     <h4>Dejanos un mensaje</h4>
+                     {% include 'templates/partials/flash.twig' %}
+                     <!-- Form Starts -->
+                     <div id="contact_form">
+                         <form action="{{ path_for('pages.send') }}" method="POST" autocomplete="off">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <label>Nombre completo<span class="required">*</span></label>
+                                 <input type="text" name="name" class="form-control input-field" value="{{ old.name }}"> 
+                                 {% if errors.name %}
+                                    <div class="invalid-feedback">{{ errors.name | first }}</div>
+                                 {% endif %}
+                              </div>
+                              <div class="col-md-6">
+                                 <label>Correo electrónico <span class="required">*</span></label>
+                                 <input type="text" name="email" class="form-control input-field" value="{{ old.email }}"> 
+                                 {% if errors.email %}
+                                    <div class="invalid-feedback">{{ errors.email | first }}</div>
+                                 {% endif %}
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <label>Asunto</label>
+                                 <input type="text" name="subject" class="form-control input-field" value="{{ old.subject }}"> 
+                                 {% if errors.subject %}
+                                    <div class="invalid-feedback">{{ errors.subject | first }}</div>
+                                 {% endif %}
+                              </div>
+                              <div class="col-md-12">
+                                 <label>Mensaje<span class="required">*</span></label>
+                                 <textarea name="message" id="message" class="textarea-field form-control" rows="3">{{ old.message }}</textarea>
+                                 {% if errors.message %}
+                                    <div class="invalid-feedback">{{ errors.message | first }}</div>
+                                 {% endif %}
+                              </div>
+                           </div>
+                           <button type="submit" id="submit_btn" value="Submit" class="btn btn-primary">Enviar mensaje</button>
+                           {{ csrf.field | raw }}
+                        </form>
+                        </div>
+                        <!-- /form-group-->
+                        <!-- Contact results -->
+                        <div id="contact_results"></div>
+                     </div>
+                     <!-- /contact)form-->
+                  </div>
+                  <!-- /contact-info-->
+               </div>
+               <!-- /row -->
+            </div>
+            <!-- /container -->
+         </div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ base_url() }}/assets/img/favperro.jpg">
+        <title>Ingresar a la plataforma | Mi Perro & Yo.</title>
+        <!-- Bootstrap core CSS -->
+        <link href="{{ base_url() }}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ base_url() }}/assets/css/login.css" rel="stylesheet">
+        <link href="{{ base_url() }}/assets/css/animate.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="login-bg">
+            <div class="login-form-container animated fadeInDown">
+                 <div class="login-logo">
+                        <a href="{{ base_url() }}/"><img src="{{ base_url() }}/assets/img/logoMiperro.png" alt="Mi Perro & Yo logo"></a>
+                 </div>
+                 <div class="form-login-title">
+                     <h2>Recuperación de cuenta</h2>
+                 </div>
+                 <div class="form-login">
+                     {% include 'templates/partials/flash.twig' %}
+                     <form method="POST" action="{{ path_for('auth.password.change') }}" autocomplete="off">
+                     <div class="campo-label">
+                         <p>Correo electrónico</p>
+                     </div>
+                     <div class="campo-input">
+                         <input type="text" id="txtMail" name="email">
+                         {% if errors.email %}
+                            <div class="invalid-feedback">{{ errors.email | first }}</div>
+                         {% endif %}
+                     </div>
+                     <div class="campo-btn">
+                         <input type="submit" id="btnRecuperar" name="recuperar" value="Recuperar cuenta">
+                     </div>
+                     {{ csrf.field | raw }}
+                     <div class="forgot-pass">
+                             <a href="{{ path_for('auth.signin') }}">Volver al login</a>
+                     </div>
+                     </form>
+                 </div>
+            </div> 
+         </div>
+
+{% endblock %}

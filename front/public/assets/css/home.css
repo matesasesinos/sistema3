@@ -1,0 +1,30 @@
+.contenido-signup{
+    height: 40px;
+    width: 180px;
+    margin-left: 100px;
+}
+
+.contenido-signup > a{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    padding-top: 0px !important;
+    text-align: center;
+    border-radius: 25px;
+    border:2px solid #eb1561;
+    color: #eb1561;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 0.2px;
+    line-height: 35px;
+}
+
+.contenido-signup > a:hover{
+    cursor: pointer;
+    background-color: #eb1561;
+    color: #fff;
+}
+

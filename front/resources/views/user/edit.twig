@@ -1,0 +1,107 @@
+{% extends 'templates/app.twig' %}
+{% block content %}
+     <!-- Jumbotron -->
+     <div class="jumbotron jumbotron-fluid" data-center="background-size: 100%;"
+     data-top-bottom="background-size: 110%;">
+     <div class="container" >
+        <!-- jumbo-heading -->
+        <div class="jumbo-heading" data-aos="fade-up">
+           <h1>Editar</h1>
+           <!-- Breadcrumbs -->
+           <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                 <li class="breadcrumb-item"><a href="../">Home</a></li>
+                 <li class="breadcrumb-item active" aria-current="page">Editar</li>
+              </ol>
+           </nav>
+           <!-- /breadcrumb -->
+        </div>
+        <!-- /jumbo-heading -->
+     </div>
+     <!-- /container -->
+  </div>
+  <!-- /jumbotron -->
+  <div class="page">
+        <div class="container block-padding no-bg-small">
+                <!--row -->
+                <div class="row pb-3">
+                   <div class="col-lg-3 col-md-3 col-12" id="perfil-menu">
+                       <div class="list-group">
+                           <a href="{{ path_for('user.data', {'id': auth.user.id}) }}" class="list-group-item list-group-item-action">Mis Datos Personales</a>
+                           <a href="{{ path_for('user.password', {'id': auth.user.id}) }}" class="list-group-item list-group-item-action">Cambiar mi contraseña</a>
+                           <a href="{{ path_for('user.entrys', {'id': auth.user.id}) }}" class="list-group-item list-group-item-action">Mis Publicaciones</a>
+                           <a href="{{ path_for('user.publish') }}" class="list-group-item list-group-item-action">Publicar</a>
+                       </div>
+                   </div>
+                    <div class="col-lg-9 col-md-9 col-12" id="perfil-data">
+                        <h4>Editar: {{ post.title }}</h4>
+                        {% include 'templates/partials/flash.twig' %}
+                        {% if post.status == 0 %}
+                           <div class="alert alert-danger">Esta publicación todavía no se aprobó, recordá que si la editas, demorará un poco más en ser aprobada.</div>
+                        {% endif %}
+                        {% if post.status == 1 %}
+                           <div class="alert alert-success">Esta publicación esta ya aprobada, recordá que si la editas, se deberá volver a aprobar.</div>
+                        {% endif %}
+                        <form action="{{ path_for('blog.editEntry') }}" method="post" enctype="multipart/form-data" autocomplete="off">
+                             <div class="form-group">
+                                <label for="">Titulo *</label>
+                               <input type="text" name="title" id="" class="form-control input-field" value="{{ post.title }}">
+                               {% if errors.title %}
+                                  <div class="invalid-feedback">{{ errors.title | first }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label for="">Resumen *</label>
+                               <textarea name="summary" id="" cols="30" rows="3" class="form-control">{{ post.summary }}</textarea>
+                               
+                               {% if errors.summary %}
+                                  <div class="invalid-feedback">{{ errors.summary | first }}</div>
+                               {% else %}
+                               <small class="form-text text-muted">Texto breve sobre tu publicación</small>
+                               {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label for="">Contenido *</label>
+                               <textarea name="content" id="editor" cols="30" rows="6" class="form-control">{{ post.content }}</textarea>
+                               {% if errors.content %}
+                                  <div class="invalid-feedback">{{ errors.content | first }}</div>
+                               {% else %}
+                               <small class="form-text text-muted">Podes usar etiquetas HTML</small>
+                               {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label for="">Imagen Principal *</label>
+                                <input type="file" name="cover" class="form-control-file" value="" />
+                               {% if errors.cover %}
+                               <div class="invalid-feedback">{{ errors.cover | first }}</div>
+                               {% endif %}
+                               <input type="hidden" name="cover_now" value="{{ post.cover }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Categoria *</label>
+                               <select name="id_category" id="" class="form-control">
+                                   <option value="">-- selecciona una categoría --</option> 
+                                   {% for category in category %}
+                                   <option value="{{ category.id_category }}" {% if category.id_category == post.id_blog_category %} selected {% endif %}>{{ category.name }}</option>
+                                   {% endfor %}
+                               </select>
+                               {% if errors.id_category %}
+                               <div class="invalid-feedback">{{ errors.id_category | first }}</div>
+                               {% endif %}
+                            </div>
+                            <input type="hidden" name="status" value="0">
+                            <input type="hidden" name="date" value="{{ post.date }}">
+                            <input type="hidden" name="id_user" value="{{ auth.user.id }}">
+                            <input type="hidden" name="id_post" value="{{ post.id_post }}">
+                            <input type="submit" name="publish" value="Publicar" class="btn btn-primary">
+                            {{ csrf.field | raw }}
+                        </form>
+                    </div>
+                   <!-- /col-lg-6-->
+                </div>
+                <!-- /row -->
+             </div>
+             <!-- /container-->
+  </div>  
+
+{% endblock %}

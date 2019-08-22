@@ -1,0 +1,33 @@
+.contenido-institucional{
+    min-height: 500px;
+    width: 100%;
+}
+
+.info-institucional{
+    min-height: 500px;
+    width: 100%;
+    margin-top: 6%;
+}
+
+.info-institucional-title, .info-institucional-desc{
+    min-height: 30px;
+    width: 100%;
+}
+
+.info-institucional-title > h2, .info-institucional-desc > p{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    padding: 10px 20px;
+}
+
+.info-institucional-desc{
+    margin-top:10px;
+}
+
+.info-institucional-desc > p{
+    text-align: justify;
+}

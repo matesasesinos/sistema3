@@ -1,0 +1,98 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+      <!-- Jumbotron -->
+      <div class="jumbotron jumbotron-fluid" data-center="background-size: 100%;"
+      data-top-bottom="background-size: 110%;">
+      <div class="container" >
+         <!-- jumbo-heading -->
+         <div class="jumbo-heading" data-aos="fade-up">
+            <h1>Registrarse</h1>
+            <!-- Breadcrumbs -->
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="../">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Registrarse</li>
+               </ol>
+            </nav>
+            <!-- /breadcrumb -->
+         </div>
+         <!-- /jumbo-heading -->
+      </div>
+      <!-- /container -->
+      </div>
+      <!-- /jumbotron -->
+      <!-- ==== Page Content ==== -->
+      <div class="page">
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-5">
+                 <h2>Registrate a nuestra comunidad</h2> 
+                 <span class="h7 mt-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</span>
+                 <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              </div>
+              <!-- /col-lg- -->
+              <!-- contact-info-->
+              <div class="contact-info col-lg-6 offset-lg-1 ">
+                 <h4>Completá el siguiente formulario para ingresar</h4>
+                 <!-- Form Starts -->
+                 <div id="contact_form">
+                    <form class="form-signin" action="{{ path_for('auth.register') }}" method="post" autocomplete="off">
+                        <div class="form-group">
+                            <div class="row">
+                               <div class="col-md-6">
+                                  <label>Nombre<span class="required">*</span></label>
+                                  <input type="text" name="name" class="form-control input-field"  value="{{ old.name }}"> 
+                                  {% if errors.name %}
+                                  <div class="invalid-feedback">{{ errors.name | first }}</div>
+                                  {% endif %}
+                               </div>
+                               <div class="col-md-6">
+                                  <label>Apellido<span class="required">*</span></label>
+                                  <input type="text" name="lastname" class="form-control input-field" autofocus="" value="{{ old.lastanme }}"> 
+                                  {% if errors.name %}
+                                  <div class="invalid-feedback">{{ errors.lastname | first }}</div>
+                                  {% endif %}
+                               </div>
+                               <div class="col-md-6">
+                                  <label>Correo electrónico <span class="required">*</span></label>
+                                  <input type="text" name="email" class="form-control input-field"  value="{{ old.email }}"> 
+                                  {% if errors.email %}
+                                  <div class="invalid-feedback">{{ errors.email | first }}</div>
+                                  {% endif %}
+                               </div>
+                               <div class="col-md-6">
+                                  <label>Teléfono <span class="required">*</span></label>
+                                  <input type="text" name="phone" class="form-control input-field"  value="{{ old.phone }}"> 
+                                  {% if errors.phone %}
+                                  <div class="invalid-feedback">{{ errors.phone | first }}</div>
+                                  {% endif %}
+                               </div>
+                            <div class="col-md-6">
+                              <label>Clave nueva<span class="required">*</span></label>
+                              <input type="password" name="password" class="form-control input-field"> 
+                              {% if errors.password %}
+                              <div class="invalid-feedback">{{ errors.password | first }}</div>
+                              {% endif %}
+                           </div>
+                            </div>
+                            {{ csrf.field | raw }}
+                            <input type="hidden" name="status" value="1">
+                            <button type="submit" id="submit_btn" value="Submit" class="btn btn-primary">Registrarse</button>
+                         </div>
+                         <!-- /form-group-->
+                   </form>
+                    
+                    <!-- Contact results -->
+                    <div id="contact_results"></div>
+                 </div>
+                 <!-- /contact)form-->
+              </div>
+              <!-- /contact-info-->
+           </div>
+           <!-- /row -->
+        </div>
+        <!-- /container -->
+     </div>
+     <!-- /page -->
+{% endblock %}

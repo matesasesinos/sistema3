@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <!--[if IE]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <![endif]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- page title -->
+      <title>Bienvenido a Mi Perro & yo. El lugar elegido para tu mejor amigo.</title>
+      <!--[if lt IE 9]>
+      <script src="js/respond.js"></script>
+      <![endif]-->
+      <!-- Font files -->
+      <link href="https://fonts.googleapis.com/css?family=Roboto:400,600,700%7CMontserrat:400,500,600,700" rel="stylesheet">
+      <link href="{{ base_url() }}/assets/fonts/flaticon/flaticon.css" rel="stylesheet" type="text/css">
+      <link href="{{ base_url() }}/assets/fonts/fontawesome/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+      <!-- Fav icons -->
+      <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+      <link rel="shortcut icon" type="image/x-icon" href="{{ base_url() }}/assets/img/favperro.jpg">
+      <!-- Bootstrap core CSS -->
+      <link href="{{ base_url() }}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- style CSS -->
+      <link href="{{ base_url() }}/assets/css/style.css" rel="stylesheet">
+      <!-- plugins CSS -->
+      <link href="{{ base_url() }}/assets/css/plugins.css" rel="stylesheet">
+      <link href="{{ base_url() }}/assets/css/home.css" rel="stylesheet">
+      <!-- Colors CSS -->
+      <link href="{{ base_url() }}/assets/styles/maincolors.css" rel="stylesheet">
+      <link href="{{ base_url() }}/assets/css/menu-login.css" rel="stylesheet">
+      <link href="{{ base_url() }}/assets/css/posts.css" rel="stylesheet">
+      <link href="{{ base_url() }}/assets/css/institucional.css" rel="stylesheet">
+	  <!-- LayerSlider CSS -->
+      <link rel="stylesheet" href="{{ base_url() }}/assets/vendor/layerslider/css/layerslider.css">
+   </head>
+   <!-- ==== body starts ==== -->
+   <body id="top">
+    
+    {% include 'templates/partials/navigation.twig' %}
+    {% block content %}{% endblock %}
+
+
+    <!-- ==== Newsletter - call to action ==== -->
+    {% include 'templates/partials/newsletter.twig' %} 
+    <!-- ==== footer ==== -->
+      <footer class="bg-light pattern1">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-3 text-center ">
+                  <img src="{{ base_url() }}/assets/img/logoMiperro.png"  class="logo-footer img-fluid" alt="Mi perro y yo logo"/>
+                  <!-- Start Social Links -->
+                  <ul class="social-list text-center list-inline">
+                     <li class="list-inline-item"><a title="Facebook" href="https://www.facebook.com/miperroyyo.com.ar" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                     <li class="list-inline-item"><a title="Twitter" href="https://twitter.com/miperrroyyo2018" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                     <li class="list-inline-item"><a  title="Instagram" href="https://www.instagram.com/miperroyyo2018/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                     <li class="list-inline-item"><a  title="Instagram" href="https://ar.pinterest.com/miperroyyo/" target="_blank"><i class="fab fa-pinterest-p"></i></a></li>
+                  </ul>
+                  <!-- /End Social Links -->
+               </div>
+               <!--/ col-lg -->
+               <div class="col-lg-3">
+                  <h5>Nosotros</h5>
+                  <!--divider -->
+                  <hr class="small-divider left"/>
+                  <p class="mt-3"><i class="fas fa-quote-left"></i> Solo los perreros de alma saben lo que significan en sus vidas. Si necesitás o buscás algo para tu perro, este es tu lugar. <i class="fas fa-quote-right"></i></p>
+               </div>
+               <!--/ col-lg -->
+               <div class="col-lg-3">
+                  <h5>Contacto</h5>
+                  <!--divider -->
+                  <hr class="small-divider left"/>
+                  <ul class="list-unstyled mt-3">
+                     <li class="mb-1"><i class="fas fa-phone margin-icon "></i>(+54) 11 4334-3131</li>
+                     <li class="mb-1"><i class="fas fa-envelope margin-icon"></i><a href="mailto:info@miperroyyo.com.ar">info@miperroyyo.com.ar</a></li>
+                     <li><i class="fas fa-map-marker margin-icon"></i>Moreno 850 Bs As - CABA </li>
+                  </ul>
+                  <!--/ul -->
+               </div>
+               <!--/ col-lg -->
+               <div class="col-lg-3">
+                  <h5>Documentación</h5>
+                  <!--divider -->
+                  <hr class="small-divider left"/>
+                  <ul class="list-unstyled mt-3">
+                     <li class="mb-1"><a href="{{ path_for('pages.page', {'link_rewrite':'terminos-y-condiciones'})}}">Términos y condiciones</a></li>
+                     <li class="mb-1"><a href="{{ path_for('pages.page', {'link_rewrite':'politica-de-cookies'})}}">Políticas de cookies</a></li>
+                     <li class="mb-1"><a href="{{ path_for('pages.page', {'link_rewrite':'politica-de-privacidad'})}}">Políticas de privacidad</a></li>
+                  </ul>
+                  <!--/ul -->
+               </div>
+               <!--/ col-lg -->
+            </div>
+            <!--/ row-->
+            <hr/>
+            <div class="row">
+               <div class="credits col-sm-6">
+                  <p>Copyright ©  2018 –  Todos los derechos reservados Miperro&yo.</p>
+               </div>
+               <div class="credits col-sm-6">
+                  <p>Powered and Developed by <a href="https://qualitytechlab.com" target="_blank">Quality Techlab</a></p>
+               </div>
+            </div>
+            <!--/col-lg-12-->
+         </div>
+         <!--/ container -->
+         <!-- Go To Top Link -->
+         <div class="page-scroll hidden-sm hidden-xs">
+            <a href="#top" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+         </div>
+         <!--/page-scroll-->
+      </footer>
+      <!--/ footer-->
+      <!-- Bootstrap core & Jquery -->
+      <script src="{{ base_url() }}/assets/vendor/jquery/jquery.min.js"></script>
+      <script src="{{ base_url() }}/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+      <!-- Custom Js -->
+      <script src="{{ base_url() }}/assets/js/custom.js"></script>
+      <script src="{{ base_url() }}/assets/js/plugins.js"></script>
+      <!-- Prefix free -->
+      <script src="{{ base_url() }}/assets/js/prefixfree.min.js"></script>
+	  <!-- number counter script -->
+      <script src="{{ base_url() }}/assets/js/counter.js"></script>
+      <!-- maps -->
+      <!-- GreenSock -->
+      <script src="{{ base_url() }}/assets/vendor/layerslider/js/greensock.js"></script>
+      <!-- LayerSlider script files -->
+      <script src="{{ base_url() }}/assets/vendor/layerslider/js/layerslider.transitions.js"></script>
+      <script src="{{ base_url() }}/assets/vendor/layerslider/js/layerslider.kreaturamedia.jquery.js"></script>
+      <script src="{{ base_url() }}/assets/vendor/layerslider/js/layerslider.load.js"></script>
+      <script src="http://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script> 
+      <script>
+         $(document).ready(function() {
+
+            $('#menu-login').addClass("ocultar");
+
+            $('#user-login').click(function(){
+
+               $('#menu-login').toggle();
+
+               return false;
+            });
+         });
+      
+      </script>
+      <script>
+			CKEDITOR.replace('editor',{
+            language: 'es',
+            uiColor: '#eb1561',
+            toolbar : [
+               { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+               { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
+               { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
+               '/',
+               { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat' ] },
+               { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-'] },
+               { name: 'links', items: [ 'Link', 'Unlink', ] },
+               '/',
+               { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
+               { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
+               { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
+               { name: 'others', items: [ '-' ] }
+            ]
+         });
+		</script>
+   </body>
+</html>

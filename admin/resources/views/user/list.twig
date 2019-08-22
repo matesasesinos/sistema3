@@ -1,0 +1,57 @@
+{% extends 'templates/app.twig' %}
+{% block content %}
+<div class="row">
+    <ol class="breadcrumb">
+        <li>
+            <a href="{{ base_url() }}">
+                <em class="fa fa-home"></em>
+            </a>
+        </li>
+        <li class="active">Usuarios</li>
+    </ol>
+</div>
+<!--/.row-->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Todos los usuarios</h1>
+    </div>
+</div>
+<!--/.row-->
+<div class="panel panel-container">
+    <div class="row">
+        <div class="col-xs-12">
+                {% include 'templates/partials/flash.twig' %}
+            <table id="tabla" class="table table-hover table-hover-stripped table-responsive">
+                <thead>
+                        <tr>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Activo</th>
+                                <th>Tipo</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.lastname }}</td>
+                            <td>{{ user.status == 1 ? 'Activo' : 'Desactivado' }}</td>
+                            <td>{{ user.is_admin == 1 ? 'Administrador' : 'Usuario' }}</td>
+                            <td><a href="{{ path_for('user.info', {'id': user.id}) }}"><i class="fas fa-eye"></i></a></td>
+                            <td>
+                                <form action="{{ path_for('user.delete') }}" method="POST">
+                                    <input type="hidden" name="id" value="{{ user.id }}">
+                                    <button type="submit" name="borrar" class="btn btn-danger"><i class="far fa-trash-alt"></i></a></button>
+                                    {{ csrf.field | raw }}  
+                                </form></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

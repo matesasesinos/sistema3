@@ -1,0 +1,88 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid" data-center="background-size: 100%;"
+     data-top-bottom="background-size: 110%;">
+     <div class="container" >
+        <!-- jumbo-heading -->
+        <div class="jumbo-heading" data-aos="fade-up">
+           <h1>{{ category_names.name | e }}</h1>
+           <!-- Breadcrumbs -->
+           <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                 <li class="breadcrumb-item"><a href="{{ base_url() }}">Home</a></li>
+                 <li class="breadcrumb-item active" aria-current="page"> {{ category_names.name | e }} </li>
+              </ol>
+           </nav>
+           <!-- /breadcrumb -->
+        </div>
+        <!-- /jumbo-heading -->
+     </div>
+     <!-- /container -->
+  </div>
+  <!-- /jumbotron -->
+ <!-- ==== Page Content ==== -->
+ <div id="blog-home" class="page">
+    <div class="contenido-posts">
+         <div class="container-fluid">
+               <div class="row">
+                  <!-- Blog Entries Column -->
+                  <div class="col-lg-10">
+                     <div class="row">
+      
+                       {% for post in blog %}
+                        <div class="col-lg-4 res-margin">
+                           <!-- blog-box -->
+                           <div class="blog-box">
+                              <!-- image -->
+                              <a href="{{ path_for('blog.entry', {'link_rewrite':post.link_rewrite}) }}">
+                                 <div class="image-post"><img src="{{ base_url() }}/assets/img/posts/{{ post.cover }}" alt=""/></div>
+                              </a>
+                              <!-- blog-box-caption -->
+                              <div class="blog-box-caption">
+                                 <!-- date -->
+                                 <div class="date"><span class="day">{{ post.date|date("d") }}</span><span class="month">{{ post.date|localizeddate('none', 'none', app.request.locale, "America/Argentina/Buenos_Aires", "MMM") }}</span></div>
+                                 <div class="categorias">
+                                    <ul>
+                                       <li><a href="{{ path_for('blog.category', {'link_rewrite':post.category}) }}">{{ post.category_name | e}}</a></li>
+                                    </ul>
+                                 </div>
+                                 <a href="{{ path_for('blog.entry', {'link_rewrite':post.link_rewrite}) }}" title="{{ post.title }}" class="title-post">
+                                    <h4>{{ post.title | truncate(50) }}</h4>
+                                 </a>
+                                 <!-- /link -->
+                                 <p>
+                                     {{ post.summary | e}}
+                                 </p>
+                              </div>
+                              <!-- blog-box-footer -->
+                              <div class="blog-box-footer">
+                                 <!-- Button -->	 
+                                 <div class="text-center col-md-12">
+                                    <a href="{{ path_for('blog.entry', {'link_rewrite':post.link_rewrite}) }}" class="btn btn-primary ">Ver nota</a>
+                                 </div>
+                              </div>
+                              <!-- /blog-box-footer -->
+                           </div>
+                           <!-- /blog-box -->
+                        </div>
+                        {% endfor %}  
+                     </div>
+                     <!-- /row -->
+                     <div class="col-md-12 mt-5">
+                        {{ blog.links() | raw }}
+                        
+                        <!-- /nav -->
+                     </div>
+                     <!-- /col-md -->
+                  </div>
+                  <!-- /page-with-sdiebar -->   
+                  {% include 'templates/partials/sidebar.twig' %}  
+                <!--/sidebar -->      
+               </div>
+               <!-- /.row -->
+            </div>
+    </div>
+        
+     </div>
+{% endblock %}

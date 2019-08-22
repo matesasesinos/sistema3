@@ -1,0 +1,132 @@
+  <!-- Preloader  -->
+      <div id="preloader">
+         <div class="container h-100">
+            <div class="row h-100 justify-content-center align-items-center">
+               <div class="preloader-logo">
+                  <!--logo -->
+                  <img src="{{ base_url() }}/assets/img/logoMiperro.png" alt="" class="img-fluid">
+                  <!--preloader circle -->
+                  <div class="lds-ring">
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                  </div>
+               </div>
+               <!--/preloader logo -->
+            </div>
+            <!--/row -->
+         </div>
+         <!--/container -->
+      </div>
+	      <!--/Preloader ends -->
+      <nav id="main-nav" class="navbar-expand-xl fixed-top">
+         <div class="row">
+            <!-- Start Top Bar -->
+            <div class="container-fluid top-bar" >
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <ul class="contact-details float-left">
+                           <li>* Hasta 30% de descuento en <a href="#" style="color:#eb1561;">accesorios</a> para tu mascota *</li>
+                           <li><i class="fa fa-phone"></i> (+54) 11 4334-3131</li>
+                        </ul>
+                        <!-- Start Contact Info -->
+                        <ul class="contact-details float-right">
+                           {% if auth.check %}
+                           <li>
+                                 <a href="#" id="user-login"><i class="fas fa-user"></i>{{ auth.user.name }} {{ auth.user.lastname }}  <i class="fas fa-sort-down"></i></a>
+                                 <ul id="menu-login">
+                                    <li>
+                                       <a class="dropdown-item" href="{{ path_for('user.panel', {'id': auth.user.id}) }}">Tu Perfil</a>
+                                    </li>
+                                    <li>
+                                       <a class="dropdown-item" href="#">Publicar Post</a>
+                                    </li>
+                                    <li>
+                                       <a class="dropdown-item" href="{{ path_for('auth.signout') }}">Salir</a>
+                                    </li> 
+                                 </ul>
+                              </li>
+                           {% else %}
+                           <li><a href="{{ path_for('auth.signin') }}"><i class="fas fa-user"></i>Ingresar al espacio</a></li>
+                           {% endif %}
+                        </ul>
+                        <!-- End Contact Info -->
+                        <!-- Start Social Links -->
+                       <!--<ul class="social-list float-right list-inline">
+                           <li class="list-inline-item"><a title="Facebook" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                           <li class="list-inline-item"><a title="Twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+                           <li class="list-inline-item"><a  title="Instagram" href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>-->
+                        <!-- /End Social Links -->
+                     </div>
+                     <!-- col-md-12 -->
+                  </div>
+                  <!-- /row -->
+               </div>
+               <!-- /container -->
+            </div>
+            <!-- End Top bar -->
+            <!-- Navbar Starts -->
+            <div class="navbar container-fluid">
+               <div class="container">
+                  <!-- logo -->
+                  <a class="nav-brand" href="{{ base_url() }}/">
+                  <img src="{{ base_url() }}/assets/img/logoMiperro.png" alt="" class="img-fluid">
+                  </a>
+                  <!-- Navbartoggler -->
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggle-icon">
+                  <i class="fas fa-bars"></i>
+                  </span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarResponsive">
+                     <ul class="navbar-nav ml-auto">
+                        <!-- menu item -->
+                        <li class="nav-item active">
+                           <a class="nav-link" href="{{ base_url() }}">Home
+                           </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="about-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Nosotros
+                              </a>
+                              <div class="dropdown-menu pattern2" aria-labelledby="about-dropdown">
+                                 <a class="dropdown-item" href="{{ path_for('pages.page', {'link_rewrite':'sobre-nosotros'})}}">Sobre nosotros</a>
+                                 <a class="dropdown-item" href="{{ path_for('pages.contact') }}">Contactanos</a>
+                           </div>
+                           </li>
+                           <li class="nav-item">
+                                 <a class="nav-link" href="{{ path_for('blog.category', {'link_rewrite':'consejos'}) }}">
+                                    Consejos
+                                 </a>
+                           </li>
+                           <li class="nav-item">
+                                 <a class="nav-link" href="{{ path_for('blog.category', {'link_rewrite':'tenencia-responsable'}) }}">
+                                    Tenencia responsable
+                                 </a>
+                           </li>
+                           <li class="nav-item">
+                                 <a class="nav-link" href="{{ path_for('blog.category', {'link_rewrite':'noticias'}) }}">
+                                    Noticias
+                                 </a>
+                           </li>
+                     </ul>
+                     <!--/ul -->
+                  </div>
+                  <div class="contenido-signup">
+				  {% if auth.check %}
+                     <a href="{{ path_for('user.publish') }}">¡Publica tu post!</a>
+				   {% else %}
+				   	<a href="{{ path_for('auth.signup') }}">¡Registrate gratis!</a>
+				   {% endif %}
+                  </div>
+                  <!--collapse -->
+               </div>
+               <!-- /container -->
+            </div>
+            <!-- /navbar -->
+         </div>
+         <!--/row -->
+      </nav>

@@ -1,0 +1,41 @@
+<!-- Sidebar -->
+<div id="sidebar" class="bg-light h-100 col-lg-2 card pattern3">
+        <!--widget-area -->
+        <div class="widget-area">
+           <h5 class="sidebar-header">Búsqueda rápida</h5>
+           <form action="{{ path_for('blog.search') }}" method="get">
+           <div class="input-group">
+              <input type="text" class="form-control" name="search" placeholder="Buscar...">
+              <span class="input-group-btn">
+              <button class="btn btn-secondary btn-sm" type="submit"><i class="fas fa-search"></i></button>
+              </span>
+           </div>
+          </form>
+        </div>
+        <!--/widget-area -->
+        <div class="widget-area">
+           <h5 class="sidebar-header">Categorías</h5>
+           <div class="list-group">
+              {% for category in categories %}
+              <a href="{{ path_for('blog.category', {'link_rewrite':category.link_rewrite}) }}" class="list-group-item list-group-item-action">
+              {{ category.name }}
+              </a>
+              {% endfor %}
+           </div>
+        </div>
+        <div class="widget-area">
+           <h5 class="sidebar-header">Síguenos en</h5>
+           <div class="contact-icon-info">
+              <ul class="social-media text-center">
+                 <!--social icons -->
+                 <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                 <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                 <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+              </ul>
+           </div>
+           <!--/contact-icon-info -->
+        </div>
+        <!--/widget-area -->
+     </div>
+     <!--/sidebar -->  

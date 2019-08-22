@@ -1,0 +1,32 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+
+  <div class="row justify-content-center">
+    <form class="form-signin" action="{{ path_for('auth.password.change') }}" method="post">
+
+      <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Change Password</h1>
+      <div class="form-group">
+        <label for="inputPassword" class="sr-only">Current Password</label>
+        <input type="password" id="inputPassword_old" name="password_old" class="form-control {{ errors.password_old ? 'is-invalid' : '' }}" placeholder="Current Password" >
+        {% if errors.password_old %}
+        <div class="invalid-feedback">{{ errors.password_old | first }}</div>
+        {% endif %}
+      </div>
+      <div class="form-group">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name="password" class="form-control {{ errors.password ? 'is-invalid' : '' }}" placeholder="New Password" >
+        {% if errors.password %}
+        <div class="invalid-feedback">{{ errors.password | first }}</div>
+        {% endif %}
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Change</button>
+
+      {{ csrf.field | raw }}
+
+      <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+    </form>
+  </div>
+
+{% endblock %}

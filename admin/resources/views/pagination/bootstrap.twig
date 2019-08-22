@@ -1,0 +1,34 @@
+{% if paginator.hasPages %}
+<nav aria-label="pagination">
+        <ul class="pagination">
+            {% if paginator.onFirstPage %}
+                <li class="page-item disabled"><span class="page-link">Primero</span></li>
+            {% else %}
+                <li class="page-item"><a class="page-link active" href="{{ paginator.previousPageUrl }}">Primero</a></li>
+            {% endif %}
+        {% for element in elements %}
+
+        {% if element is iterable %}
+            {% for page, url in element %}
+
+            {% if page == paginator.currentPage %}
+            <li class="page-item"><a class="page-link active" href="{{ url }}">{{ page }}</a></li>
+            {% else %}
+                <li class="page-item"><a class="page-link" href="{{ url }}">{{ page }}</a></li>
+            {% endif %}
+
+            {% endfor %}
+        {% else %}
+            <li class="page-item disabled"><span class="page-link">{{ element }}</span></li>
+        {% endif %}
+
+        {% endfor %}
+
+        {% if paginatorhasMorePages %}
+            <li class="page-item"><a class="page-link active" href="{{ paginator.nextPageUrl }}">Ultimo</a></li>
+        {% else %}
+        <li class="page-item disabled"><span class="page-link">Ultimo</span></li>
+        {% endif %}
+</ul>
+</nav>
+{% endif %}

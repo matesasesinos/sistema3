@@ -1,0 +1,8 @@
+{% set route = app.request.attributes.get('_route') %}
+<div class="col-lg-3 col-md-3 col-12" id="perfil-menu">
+        <div class="list-group">
+            <a href="../datos/index.html" class="{% if app.request.attributes.get('_route') starts with 'book' %}active{% endif %} list-group-item list-group-item-action">Mis Datos Personales</a>
+            <a href="{{ path_for('user.entrys') }}" class="{% if app.request.attributes.get('_route')[auth.user.id] starts with 'mis-publicaciones' %}active{% endif %} list-group-item list-group-item-action">Mis Publicaciones</a>
+            <a href="{{ path_for('user.publish') }}" class="{% if app.request.attributes.get('_route') starts with 'publicar' %}active{% endif %} list-group-item list-group-item-action">Publicar</a>
+        </div>
+    </div>

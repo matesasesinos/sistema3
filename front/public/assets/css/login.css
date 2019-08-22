@@ -1,0 +1,182 @@
+body{
+    background: #f8f9fa;
+}
+
+.login-bg{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    margin:0;
+    padding: 0;
+    position: absolute;
+    top:0;
+    left:0;
+    background-image: url('../img/background/miperroyyo_login.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-form-container{
+    min-height: 300px;
+    width: 400px;
+    margin:auto;
+    margin-top: 60px;
+    padding: 50px 20px;
+    padding-top: 20px;
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,.09);
+}
+
+.login-logo{
+    height: 130px;
+    width: 200px;
+    margin:auto;
+}
+
+.login-logo img{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    margin:0;
+    padding: 0;
+}
+
+.form-login-title{
+    min-height: 30px;
+    width: 70%;
+    margin:auto;
+    margin-top: 10px;
+}
+
+.form-login-title > h2{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 22px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #222;
+    font-weight: 600;
+}
+
+.form-login{
+    min-height: 200px;
+    width: 70%;
+    margin:auto;
+    margin-top: 30px;
+}
+
+.campo-label{
+    min-height: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.campo-label > p{
+    height: 100%;
+    width:100%;
+    display: inline-block;
+    margin:0;
+    padding: 0;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color: #6f6f6f;
+}
+
+.campo-input{
+    height: 35px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.campo-input > input{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    padding-left: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #6f6f6f;
+    border-radius: 2px;
+    border:1px solid #ddd;
+}
+
+.campo-btn{
+    height: 40px;
+    width: 150px;
+    margin:auto;
+    margin-top: 30px;
+}
+
+.campo-btn > input{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #eb1561;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    border:1px solid #eb1561;
+}
+
+.campo-btn > input:hover{
+    cursor: pointer;
+    background-color: #b60e49;
+    border:1px solid #b60e49;
+}
+
+.forgot-pass{
+    min-height: 30px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.forgot-pass > a{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: #6f6f6f;
+}
+
+.forgot-pass > a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #504f4f;
+}
+
+.campo-msj-error{
+    min-height: 30px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.campo-msj-error > p{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    margin:0;
+    padding: 0;
+    text-align: center;
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+    color: #8f0e0e;
+}
+
